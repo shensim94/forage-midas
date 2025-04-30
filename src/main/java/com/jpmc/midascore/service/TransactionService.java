@@ -1,5 +1,7 @@
 package com.jpmc.midascore.service;
 
+import com.jpmc.midascore.foundation.Transaction;
+
 public interface TransactionService {
-    void processTransaction(long senderId, long recipientId, float amount);
+    void processTransaction(Transaction transaction);
 }

@@ -17,10 +17,6 @@ public class KafkaConsumer {
     public void consume(Transaction transaction) {
         //System.out.println("HELLO FROM KAFKA CONSUMER!!!!!!!!!!");
         //System.out.println("Received transaction: " + transaction);
-        transactionService.processTransaction(
-                transaction.getSenderId(),
-                transaction.getRecipientId(),
-                transaction.getAmount()
-        );
+        transactionService.processTransaction(transaction);
     }
 }
