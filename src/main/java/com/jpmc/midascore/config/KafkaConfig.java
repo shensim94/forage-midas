@@ -52,12 +52,11 @@ public class KafkaConfig {
     @Bean
     public Map<String, Object> consumerConfigs() {
         Map<String, Object> props = new HashMap<>();
-        // Use the injected bootstrapServers value
+
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "my-group");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-        // Deserializer props are configured in consumerFactory now,
-        // but setting them here wouldn't hurt if preferred.
+
         System.out.println("Kafka consumer config initialized with injected bootstrap servers: " + bootstrapServers);
         return props;
     }
